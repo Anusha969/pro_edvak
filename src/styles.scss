@@ -1,3 +1,23 @@
+@use "../public/css/buttons" as *; // Using @use instead of @import
+@use "../public/css/root" as *;
+@use "../public/css/alerts" as *;
+@use "../public/css/colors" as *;
+@use "../public/css/focus" as *;
+// @use "../public/css/avatar" as *;
+
+@use "../public/css/smooth-scrollbar" as *;
+@use "../public/css/checkbox_radio" as *;
+@use "../public/css/customfile_upload" as *;
+@use "../public/css/headings" as *;
+@use "../public/css/input" as *;
+@use "../public/css/list" as *;
+@use "../public/css/ng-select" as *;
+@use "../public/css/select" as *;
+@use "../public/css/tables" as *;
+@use "../public/css/tabs" as *;
+@use "../public/css/tag" as *;
+@use "../public/css/animation" as *;
+@use "../public/css/zindex" as *;
 
 @import "primeicons/primeicons.css";
 @tailwind base;
@@ -6,25 +26,26 @@
 
 
 
-@import "../public/css/root.scss";
-@import "../public/css/alerts";
-@import "../public/css/colors";
-@import "../public/css/focus";
-// @import "../public/css/avatar";
-@import "../public/css/buttons";
-@import "../public/css/smooth-scrollbar";
-@import "../public/css/checkbox_radio";
-@import "../public/css/customfile_upload";
-@import "../public/css/headings";
-@import "../public/css/input";
-@import "../public/css/list";
-@import "../public/css/ng-select";
-@import "../public/css/select";
-@import "../public/css/tables";
-@import "../public/css/tabs";
-@import "../public/css/tag";
-@import "../public/css/animation";
-@import "../public/css/zindex";
+// @import "../public/css/root.scss";
+// @import "../public/css/alerts";
+// @import "../public/css/colors";
+// @import "../public/css/focus";
+// // @import "../public/css/avatar";
+
+// @import "../public/css/smooth-scrollbar";
+// @import "../public/css/checkbox_radio";
+// @import "../public/css/customfile_upload";
+// @import "../public/css/headings";
+// @import "../public/css/input";
+// @import "../public/css/list";
+// @import "../public/css/ng-select";
+// @import "../public/css/select";
+// @import "../public/css/tables";
+// @import "../public/css/tabs";
+// @import "../public/css/tag";
+// @import "../public/css/animation";
+// @import "../public/css/zindex";
+
 
 
 
@@ -142,3 +163,5 @@ body {
 {
     margin-bottom: 1rem;
 }
+
+//chamu styles

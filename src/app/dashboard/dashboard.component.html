@@ -1,0 +1,55 @@
+<div class="flex h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <div *ngIf="sidebarVisible" class="md:flex flex-col w-64 bg-gray-800">
+      <div class="flex items-center justify-center h-16 bg-gray-100">
+        <img class="w-auto h-8 mr-2" src="images/logo.svg" alt="logo">
+      </div>
+      <div class="flex flex-col flex-1 overflow-y-auto">
+        <nav class="flex-1 px-2 py-4 bg-white">
+          <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 gap-4">
+            <i class="pi pi-bars"></i>
+            Dashboard
+          </a>
+          <a href="#" class="flex items-center px-4 py-2 mt-2 text-gray-700 hover:bg-gray-100 gap-4">
+            <i class="pi pi-map-marker"></i>
+            Create
+          </a>
+          <a href="#" class="flex items-center px-4 py-2 mt-2 text-gray-700 hover:bg-gray-100 gap-4">
+            <i class="pi pi-eye"></i>
+            View 
+          </a>
+          <a href="#" class="flex items-center px-4 py-2 mt-2 text-gray-700 hover:bg-gray-100 gap-4">
+            <i class="pi pi-pencil"></i>
+            Update
+          </a>
+          <a href="#" class="flex items-center px-4 py-2 mt-2 text-gray-700 hover:bg-gray-100 gap-4">
+            <i class="pi pi-trash"></i>
+            Delete
+          </a>
+        </nav>
+      </div>
+    </div>
+  
+    <!-- Main content -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+      <div class="flex items-center justify-between h-16 bg-white border-b border-gray-200">
+        <!-- Navbar left side (logo and search) -->
+        <div class="flex items-center px-4">
+          <!-- Toggler button -->
+          <button (click)="toggleSidebar()">
+            <i class="pi pi-bars"></i> <!-- Toggler icon -->
+          </button>
+          <input class="mx-4 w-full border rounded-md px-4 py-2" type="text" placeholder="Search">
+        </div>
+  
+        <!-- Navbar right side (menu options) -->
+        <div class="flex items-center pr-4 space-x-4">
+          <!-- PrimeNG Menu component -->
+          <p-menu #menu [model]="items" [popup]="true"></p-menu>
+          <!-- Avatar with click event to toggle the menu -->
+          <p-avatar (click)="toggleMenu($event)" label="P" styleClass="mr-2" size="normal" shape="circle"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  

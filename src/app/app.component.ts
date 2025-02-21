@@ -7,7 +7,8 @@ import { TableModule } from 'primeng/table';
 import { MenuModule } from 'primeng/menu';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
-import { MultiSelect, MultiSelectModule } from 'primeng/multiselect';
+//import { MultiSelect, MultiSelectModule } from 'primeng/multiselect';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'primeng/select';
 import { TagModule } from 'primeng/tag';
@@ -22,6 +23,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { DrawerModule } from 'primeng/drawer';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';  // <-- Add these imports for form handlin
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +31,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';  // <-- Add
     ButtonModule,
     SelectButtonModule,
     RadioButtonModule,
-    MultiSelect,
+  
     ListboxModule,
     FloatLabelModule,
     DatePickerModule,
@@ -48,7 +50,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';  // <-- Add
     TagModule,
     IconFieldModule,
     InputIconModule,
-    DrawerModule
+    DrawerModule,
+    RouterOutlet,
+    TagModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -123,25 +127,25 @@ export class AppComponent implements OnInit {
 
   constructor(private primeng: PrimeNG, private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-    this.primeng.ripple.set(true);
-    // Initialize the registration form
-    this.registrationForm = this.fb.group({
+   ngOnInit(): void {
+     this.primeng.ripple.set(true);
+     // Initialize the registration form
+  this.registrationForm = this.fb.group({
       first_name: ['', [Validators.required, Validators.pattern('^[A-Za-z].{0,34}$')]],
-      last_name: ['', [Validators.required, Validators.pattern('^[A-Za-z].{0,34}$')]],
+     last_name: ['', [Validators.required, Validators.pattern('^[A-Za-z].{0,34}$')]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])')]]
-    });
-  }
+       password: ['', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])')]]
+     });
+   }
 
   toggleDarkMode() {
     const element = document.querySelector('html');
     element && element.classList.toggle('dark-theme');
   }
 
-  onSubmit() {
-    if (this.registrationForm.valid) {
-      console.log('Form Submitted!', this.registrationForm.value);
-    }
-  }
+  // onSubmit() {
+  //   if (this.registrationForm.valid) {
+  //     console.log('Form Submitted!', this.registrationForm.value);
+  //   }
+  // }
 }
